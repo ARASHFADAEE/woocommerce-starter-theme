@@ -10,6 +10,7 @@
 
 define('THEME_URL', get_template_directory_uri());
 define('THEME_DIR', get_template_directory());
+define('INC_DIR', THEME_DIR . '/inc');
 define('ASSETS_URL', THEME_URL . '/assets');
 define('ASSETS_DIR', THEME_DIR . '/assets');
 
@@ -30,6 +31,17 @@ function theme_support() {
 
 add_action('after_setup_theme', 'theme_support');
 
+/**
+ * include feature files
+ * 
+ * @return void
+ */
+
+include_once INC_DIR . '/feature.php';
+
+include_once INC_DIR . '/PostType.php';
+
+include_once INC_DIR . '/taxonamies.php';
 
 
 
